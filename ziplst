@@ -1,0 +1,14 @@
+*.exe
+*.txt
+*.pas
+*.dpr
+*.rc
+*.res
+*.dcr
+*.bpg
+*.dfm
+*.dpk
+*.bat
+*.inc
+hashes\Hash*.pas
+ziplst
