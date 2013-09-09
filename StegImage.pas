@@ -53,13 +53,22 @@
 
 unit StegImage;
 
+{$IFDEF FPC}
+  {$MODE Delphi}
+{$ENDIF}
+
 {$i gsx.inc}
 {$define HAVE_PNG}
 
 interface
 
 uses
-  SysUtils, System.Types, Classes, Graphics, Vcl.Imaging.pngimage;
+{$IFNDEF FPC}
+  System.Types, Vcl.Imaging.pngimage,
+{$ELSE}
+  pngimage,
+{$ENDIF}
+  SysUtils, Classes, Graphics;
 
 type
   TPointArray = array of TPoint;

@@ -21,6 +21,11 @@
 }
 
 program gsxsteg;
+
+{$IFDEF FPC}
+  {$MODE Delphi}
+{$ENDIF}
+
 {$APPTYPE CONSOLE}
 {$i gsx.inc}
 {%File 'gsxsteg.txt'}
@@ -31,8 +36,6 @@ uses
   SysUtils,
   Classes,
   StegImage in 'StegImage.pas';
-
-{$R *.RES}
 
 const
   VERSION = '1.0.1';

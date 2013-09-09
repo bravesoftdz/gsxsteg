@@ -28,10 +28,18 @@
 
 unit HashSHA512;
 
+{$IFDEF FPC}
+  {$MODE Delphi}
+{$ENDIF}
+
 interface
 
 uses
-  SysUtils, Classes, Windows, Hash, HashSHA512Base;
+{$IFNDEF FPC}
+  Windows,
+{$ELSE}
+{$ENDIF}
+  SysUtils, Classes, Hash, HashSHA512Base;
 
 type
   THashSHA512 = class(THashSHA512Base)
