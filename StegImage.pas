@@ -215,7 +215,7 @@ begin
   key := GenKey;
   r := TIsaac.Create(key);
   try
-    SetLength(used, High(fCoords));
+    SetLength(used, High(fCoords)+1);
     for i := 0 to High(fCoords) do begin
       ix := r.IntVal(High(fCoords));
       if not used[ix] then begin
