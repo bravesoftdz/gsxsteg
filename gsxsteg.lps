@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
   <ProjectSession>
     <PathDelim Value="\"/>
@@ -10,7 +10,7 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="18"/>
+        <TopLine Value="213"/>
         <CursorPos X="7" Y="38"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
@@ -44,8 +44,8 @@
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="3334"/>
-        <CursorPos X="12" Y="3353"/>
+        <TopLine Value="3785"/>
+        <CursorPos X="31" Y="3804"/>
         <UsageCount Value="10"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
@@ -74,128 +74,120 @@
     <General>
       <ActiveWindowIndexAtStart Value="0"/>
     </General>
-    <JumpHistory Count="30" HistoryIndex="29">
+    <JumpHistory Count="28" HistoryIndex="27">
       <Position1>
         <Filename Value="gsxsteg.dpr"/>
-        <Caret Line="1" Column="1" TopLine="55"/>
+        <Caret Line="38" Column="7" TopLine="18"/>
       </Position1>
       <Position2>
-        <Filename Value="gsxsteg.dpr"/>
-        <Caret Line="38" Column="7" TopLine="18"/>
+        <Filename Value="StegImage.pas"/>
+        <Caret Line="69" Column="12" TopLine="40"/>
       </Position2>
       <Position3>
         <Filename Value="StegImage.pas"/>
-        <Caret Line="69" Column="12" TopLine="40"/>
+        <Caret Line="71" Column="30" TopLine="51"/>
       </Position3>
       <Position4>
-        <Filename Value="StegImage.pas"/>
-        <Caret Line="71" Column="30" TopLine="51"/>
+        <Filename Value="pngimage\pngimage.pas"/>
+        <Caret Line="1" Column="1" TopLine="1"/>
       </Position4>
       <Position5>
-        <Filename Value="pngimage\pngimage.pas"/>
+        <Filename Value="pngimage\zlibpas.pas"/>
         <Caret Line="1" Column="1" TopLine="1"/>
       </Position5>
       <Position6>
-        <Filename Value="pngimage\zlibpas.pas"/>
-        <Caret Line="1" Column="1" TopLine="1"/>
+        <Filename Value="pngimage\pngimage.pas"/>
+        <Caret Line="200" Column="9" TopLine="190"/>
       </Position6>
       <Position7>
         <Filename Value="pngimage\pngimage.pas"/>
-        <Caret Line="200" Column="9" TopLine="190"/>
+        <Caret Line="1211" Column="102" TopLine="1190"/>
       </Position7>
       <Position8>
         <Filename Value="pngimage\pngimage.pas"/>
-        <Caret Line="1211" Column="102" TopLine="1190"/>
+        <Caret Line="1197" Column="9" TopLine="1177"/>
       </Position8>
       <Position9>
         <Filename Value="pngimage\pngimage.pas"/>
-        <Caret Line="1" Column="1" TopLine="241"/>
+        <Caret Line="1203" Column="100" TopLine="1178"/>
       </Position9>
       <Position10>
         <Filename Value="pngimage\pngimage.pas"/>
-        <Caret Line="1197" Column="9" TopLine="1177"/>
+        <Caret Line="1193" Column="12" TopLine="1173"/>
       </Position10>
       <Position11>
         <Filename Value="pngimage\pngimage.pas"/>
-        <Caret Line="1203" Column="100" TopLine="1178"/>
+        <Caret Line="210" Column="9" TopLine="184"/>
       </Position11>
       <Position12>
         <Filename Value="pngimage\pngimage.pas"/>
-        <Caret Line="1193" Column="12" TopLine="1173"/>
+        <Caret Line="1403" Column="27" TopLine="1384"/>
       </Position12>
       <Position13>
         <Filename Value="pngimage\pngimage.pas"/>
-        <Caret Line="210" Column="9" TopLine="184"/>
+        <Caret Line="1463" Column="27" TopLine="1444"/>
       </Position13>
       <Position14>
         <Filename Value="pngimage\pngimage.pas"/>
-        <Caret Line="1403" Column="27" TopLine="1384"/>
+        <Caret Line="1853" Column="32" TopLine="1834"/>
       </Position14>
       <Position15>
         <Filename Value="pngimage\pngimage.pas"/>
-        <Caret Line="1463" Column="27" TopLine="1444"/>
+        <Caret Line="2084" Column="7" TopLine="2065"/>
       </Position15>
       <Position16>
         <Filename Value="pngimage\pngimage.pas"/>
-        <Caret Line="1853" Column="32" TopLine="1834"/>
+        <Caret Line="2088" Column="32" TopLine="2068"/>
       </Position16>
       <Position17>
         <Filename Value="pngimage\pngimage.pas"/>
-        <Caret Line="2084" Column="7" TopLine="2065"/>
+        <Caret Line="2129" Column="18" TopLine="2110"/>
       </Position17>
       <Position18>
         <Filename Value="pngimage\pngimage.pas"/>
-        <Caret Line="2088" Column="32" TopLine="2068"/>
+        <Caret Line="2131" Column="25" TopLine="2112"/>
       </Position18>
       <Position19>
         <Filename Value="pngimage\pngimage.pas"/>
-        <Caret Line="2129" Column="18" TopLine="2110"/>
+        <Caret Line="2160" Column="25" TopLine="2140"/>
       </Position19>
       <Position20>
         <Filename Value="pngimage\pngimage.pas"/>
-        <Caret Line="2131" Column="25" TopLine="2112"/>
+        <Caret Line="2175" Column="23" TopLine="2155"/>
       </Position20>
       <Position21>
         <Filename Value="pngimage\pngimage.pas"/>
-        <Caret Line="2160" Column="25" TopLine="2140"/>
+        <Caret Line="2160" Column="29" TopLine="2139"/>
       </Position21>
       <Position22>
         <Filename Value="pngimage\pngimage.pas"/>
-        <Caret Line="2175" Column="23" TopLine="2155"/>
+        <Caret Line="3092" Column="21" TopLine="3072"/>
       </Position22>
       <Position23>
         <Filename Value="pngimage\pngimage.pas"/>
-        <Caret Line="2160" Column="29" TopLine="2139"/>
+        <Caret Line="3090" Column="21" TopLine="3071"/>
       </Position23>
       <Position24>
         <Filename Value="pngimage\pngimage.pas"/>
-        <Caret Line="3092" Column="21" TopLine="3072"/>
+        <Caret Line="2085" Column="19" TopLine="2065"/>
       </Position24>
       <Position25>
         <Filename Value="pngimage\pngimage.pas"/>
-        <Caret Line="3090" Column="21" TopLine="3071"/>
+        <Caret Line="2088" Column="41" TopLine="2068"/>
       </Position25>
       <Position26>
         <Filename Value="pngimage\pngimage.pas"/>
-        <Caret Line="2085" Column="19" TopLine="2065"/>
+        <Caret Line="3088" Column="20" TopLine="3068"/>
       </Position26>
       <Position27>
         <Filename Value="pngimage\pngimage.pas"/>
-        <Caret Line="2088" Column="41" TopLine="2068"/>
+        <Caret Line="3350" Column="31" TopLine="3331"/>
       </Position27>
       <Position28>
         <Filename Value="pngimage\pngimage.pas"/>
-        <Caret Line="3088" Column="20" TopLine="3068"/>
+        <Caret Line="3353" Column="12" TopLine="3334"/>
       </Position28>
-      <Position29>
-        <Filename Value="pngimage\pngimage.pas"/>
-        <Caret Line="3350" Column="31" TopLine="3331"/>
-      </Position29>
-      <Position30>
-        <Filename Value="pngimage\pngimage.pas"/>
-        <Caret Line="3353" Column="44" TopLine="3334"/>
-      </Position30>
     </JumpHistory>
   </ProjectSession>
-  <SkipCheckLCLInterfaces Value="True"/>
+  <EditorMacros Count="0"/>
 </CONFIG>
