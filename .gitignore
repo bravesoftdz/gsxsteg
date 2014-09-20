@@ -5,3 +5,6 @@
 *.zip
 *.otares
 *.lpi
+*.compiled
+__history
+ConverterBackup
