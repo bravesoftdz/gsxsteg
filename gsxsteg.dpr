@@ -38,7 +38,7 @@ uses
   StegImage in 'StegImage.pas';
 
 const
-  VERSION = '1.0.1';
+  VERSION = '1.0.2';
 
 type
   TStegAction = (saUnknown, saHide, saExtract);
