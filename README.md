@@ -6,6 +6,14 @@ A small commandline program which provides steganography.
 
 GPL
 
+## Compatibility
+
+OS
+: Windows, Linux
+
+Compiler
+: Free Pascal, Delphi
+
 ## Usage
 
 ~~~
