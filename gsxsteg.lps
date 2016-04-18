@@ -4,190 +4,129 @@
     <PathDelim Value="\"/>
     <Version Value="9"/>
     <BuildModes Active="Default"/>
-    <Units Count="6">
+    <Units Count="8">
       <Unit0>
         <Filename Value="gsxsteg.dpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="0"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="213"/>
-        <CursorPos X="7" Y="38"/>
-        <UsageCount Value="20"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="16"/>
+        <CursorPos X="19" Y="49"/>
+        <UsageCount Value="21"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit0>
       <Unit1>
         <Filename Value="StegImage.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="StegImage"/>
         <EditorIndex Value="1"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="49"/>
-        <CursorPos X="3" Y="69"/>
-        <UsageCount Value="20"/>
+        <TopLine Value="47"/>
+        <CursorPos X="80" Y="76"/>
+        <UsageCount Value="21"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit1>
       <Unit2>
         <Filename Value="hashes\HashSHA512.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="HashSHA512"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="1" Y="1"/>
-        <UsageCount Value="20"/>
+        <UsageCount Value="21"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit2>
       <Unit3>
         <Filename Value="pngimage\pngimage.pas"/>
-        <UnitName Value="pngimage"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="2"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="3785"/>
-        <CursorPos X="31" Y="3804"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="4058"/>
+        <CursorPos X="13" Y="4079"/>
         <UsageCount Value="10"/>
-        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit3>
       <Unit4>
         <Filename Value="pngimage\zlibpas.pas"/>
-        <UnitName Value="zlibpas"/>
-        <EditorIndex Value="4"/>
-        <WindowIndex Value="0"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="19"/>
         <CursorPos X="56" Y="45"/>
         <UsageCount Value="10"/>
-        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit4>
       <Unit5>
         <Filename Value="C:\lazarus\fpc\2.6.2\source\rtl\inc\systemh.inc"/>
-        <EditorIndex Value="3"/>
-        <WindowIndex Value="0"/>
         <TopLine Value="795"/>
         <CursorPos X="11" Y="814"/>
         <UsageCount Value="10"/>
-        <Loaded Value="True"/>
       </Unit5>
+      <Unit6>
+        <Filename Value="hashes\HashSHA512Base.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="156"/>
+        <CursorPos X="12" Y="177"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="gsx.inc"/>
+        <EditorIndex Value="2"/>
+        <CursorPos X="4" Y="2"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit7>
     </Units>
-    <General>
-      <ActiveWindowIndexAtStart Value="0"/>
-    </General>
-    <JumpHistory Count="28" HistoryIndex="27">
+    <JumpHistory Count="14" HistoryIndex="13">
       <Position1>
-        <Filename Value="gsxsteg.dpr"/>
-        <Caret Line="38" Column="7" TopLine="18"/>
+        <Filename Value="StegImage.pas"/>
+        <Caret Line="69" Column="10" TopLine="35"/>
       </Position1>
       <Position2>
         <Filename Value="StegImage.pas"/>
-        <Caret Line="69" Column="12" TopLine="40"/>
+        <Caret Line="71" Column="22" TopLine="50"/>
       </Position2>
       <Position3>
         <Filename Value="StegImage.pas"/>
-        <Caret Line="71" Column="30" TopLine="51"/>
+        <Caret Line="142" Column="44" TopLine="135"/>
       </Position3>
       <Position4>
-        <Filename Value="pngimage\pngimage.pas"/>
-        <Caret Line="1" Column="1" TopLine="1"/>
+        <Filename Value="StegImage.pas"/>
+        <Caret Line="144" Column="17" TopLine="121"/>
       </Position4>
       <Position5>
-        <Filename Value="pngimage\zlibpas.pas"/>
-        <Caret Line="1" Column="1" TopLine="1"/>
+        <Filename Value="StegImage.pas"/>
+        <Caret Line="466" Column="52" TopLine="445"/>
       </Position5>
       <Position6>
-        <Filename Value="pngimage\pngimage.pas"/>
-        <Caret Line="200" Column="9" TopLine="190"/>
+        <Filename Value="StegImage.pas"/>
+        <Caret Line="492" Column="52" TopLine="462"/>
       </Position6>
       <Position7>
-        <Filename Value="pngimage\pngimage.pas"/>
-        <Caret Line="1211" Column="102" TopLine="1190"/>
+        <Filename Value="StegImage.pas"/>
+        <Caret Line="71" Column="64" TopLine="62"/>
       </Position7>
       <Position8>
-        <Filename Value="pngimage\pngimage.pas"/>
-        <Caret Line="1197" Column="9" TopLine="1177"/>
+        <Filename Value="StegImage.pas"/>
+        <Caret Line="465" Column="63" TopLine="431"/>
       </Position8>
       <Position9>
-        <Filename Value="pngimage\pngimage.pas"/>
-        <Caret Line="1203" Column="100" TopLine="1178"/>
+        <Filename Value="StegImage.pas"/>
+        <Caret Line="469" Column="51" TopLine="455"/>
       </Position9>
       <Position10>
-        <Filename Value="pngimage\pngimage.pas"/>
-        <Caret Line="1193" Column="12" TopLine="1173"/>
+        <Filename Value="gsx.inc"/>
+        <Caret Line="2" Column="4"/>
       </Position10>
       <Position11>
-        <Filename Value="pngimage\pngimage.pas"/>
-        <Caret Line="210" Column="9" TopLine="184"/>
+        <Filename Value="StegImage.pas"/>
+        <Caret Line="58" TopLine="31"/>
       </Position11>
       <Position12>
-        <Filename Value="pngimage\pngimage.pas"/>
-        <Caret Line="1403" Column="27" TopLine="1384"/>
+        <Filename Value="StegImage.pas"/>
+        <Caret Line="303" Column="52" TopLine="287"/>
       </Position12>
       <Position13>
-        <Filename Value="pngimage\pngimage.pas"/>
-        <Caret Line="1463" Column="27" TopLine="1444"/>
+        <Filename Value="StegImage.pas"/>
+        <Caret Line="70" Column="20" TopLine="37"/>
       </Position13>
       <Position14>
-        <Filename Value="pngimage\pngimage.pas"/>
-        <Caret Line="1853" Column="32" TopLine="1834"/>
+        <Filename Value="StegImage.pas"/>
+        <Caret Line="68" Column="23" TopLine="60"/>
       </Position14>
-      <Position15>
-        <Filename Value="pngimage\pngimage.pas"/>
-        <Caret Line="2084" Column="7" TopLine="2065"/>
-      </Position15>
-      <Position16>
-        <Filename Value="pngimage\pngimage.pas"/>
-        <Caret Line="2088" Column="32" TopLine="2068"/>
-      </Position16>
-      <Position17>
-        <Filename Value="pngimage\pngimage.pas"/>
-        <Caret Line="2129" Column="18" TopLine="2110"/>
-      </Position17>
-      <Position18>
-        <Filename Value="pngimage\pngimage.pas"/>
-        <Caret Line="2131" Column="25" TopLine="2112"/>
-      </Position18>
-      <Position19>
-        <Filename Value="pngimage\pngimage.pas"/>
-        <Caret Line="2160" Column="25" TopLine="2140"/>
-      </Position19>
-      <Position20>
-        <Filename Value="pngimage\pngimage.pas"/>
-        <Caret Line="2175" Column="23" TopLine="2155"/>
-      </Position20>
-      <Position21>
-        <Filename Value="pngimage\pngimage.pas"/>
-        <Caret Line="2160" Column="29" TopLine="2139"/>
-      </Position21>
-      <Position22>
-        <Filename Value="pngimage\pngimage.pas"/>
-        <Caret Line="3092" Column="21" TopLine="3072"/>
-      </Position22>
-      <Position23>
-        <Filename Value="pngimage\pngimage.pas"/>
-        <Caret Line="3090" Column="21" TopLine="3071"/>
-      </Position23>
-      <Position24>
-        <Filename Value="pngimage\pngimage.pas"/>
-        <Caret Line="2085" Column="19" TopLine="2065"/>
-      </Position24>
-      <Position25>
-        <Filename Value="pngimage\pngimage.pas"/>
-        <Caret Line="2088" Column="41" TopLine="2068"/>
-      </Position25>
-      <Position26>
-        <Filename Value="pngimage\pngimage.pas"/>
-        <Caret Line="3088" Column="20" TopLine="3068"/>
-      </Position26>
-      <Position27>
-        <Filename Value="pngimage\pngimage.pas"/>
-        <Caret Line="3350" Column="31" TopLine="3331"/>
-      </Position27>
-      <Position28>
-        <Filename Value="pngimage\pngimage.pas"/>
-        <Caret Line="3353" Column="12" TopLine="3334"/>
-      </Position28>
     </JumpHistory>
   </ProjectSession>
-  <EditorMacros Count="0"/>
 </CONFIG>

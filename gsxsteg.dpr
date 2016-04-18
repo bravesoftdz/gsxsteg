@@ -23,16 +23,16 @@
 program gsxsteg;
 
 {$IFDEF FPC}
-  {$MODE Delphi}
+{$MODE Delphi}
 {$ENDIF}
 
+{$IFDEF WINDOWS}
 {$APPTYPE CONSOLE}
+{$ENDIF}
+
 {$i gsx.inc}
-{%File 'gsxsteg.txt'}
-{%File 'gsxstegstrs.inc'}
 
 uses
-//  VCLFixPack,	// VCLFixPack added by vitus in 20121207
   SysUtils,
   Classes,
   StegImage in 'StegImage.pas';
@@ -43,7 +43,7 @@ const
 type
   TStegAction = (saUnknown, saHide, saExtract);
 
-{$i gsxstegstrs.inc}
+{$i gsxstegstrs_en.inc}
 
 var
   // Batch mode

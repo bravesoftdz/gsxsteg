@@ -58,7 +58,6 @@ unit StegImage;
 {$ENDIF}
 
 {$i gsx.inc}
-{$define HAVE_PNG}
 
 interface
 
@@ -66,7 +65,7 @@ uses
 {$IFNDEF FPC}
   System.Types, Vcl.Imaging.pngimage,
 {$ELSE}
-  pngimage,
+  fpimage, Interfaces,
 {$ENDIF}
   SysUtils, Classes, Graphics;
 
@@ -138,6 +137,11 @@ uses
 
 type
   TIntArr = packed array[0..SizeOf(Cardinal)-1] of Byte;
+{$IFDEF FPC}
+  TPngImageClass = TPortableNetworkGraphic;
+{$ELSE}
+  TPngImageClass = TPngImage;
+{$ENDIF}
 
 const
   // Supported pixel format
@@ -457,9 +461,7 @@ begin
   // Let TPicture decide what type and let load it
   inherited;
   // If it is not a supported type raise an exception
-  if (not ((Graphic is TBitmap)
-    {$ifdef HAVE_PNG} or (Graphic is TPngImage){$endif}
-    )) then
+  if (not ((Graphic is TBitmap) or (Graphic is TPngImageClass))) then
     raise TStegException.Create(SUnsuppPictrue);
   // Assign it to the bitmap
   fBitmap.Assign(Graphic);
@@ -475,7 +477,7 @@ begin
   // Assign the bitmap to the graphics
   Graphic.Assign(fBitmap);
   // Let TPicture save the file
-  inherited;
+  inherited SaveToFile(Filename);
 end;
 
 procedure TStegImage.Assign(Source: TPersistent);
@@ -483,9 +485,7 @@ begin
   fOccRatio := 0.0;
   // See TStegImage.LoadFromFile
   inherited;
-  if (not ((Graphic is TBitmap)
-    {$ifdef HAVE_PNG} or (Graphic is TPngImage){$endif}
-    )) then
+  if (not ((Graphic is TBitmap) or (Graphic is TPngImageClass))) then
     raise TStegException.Create(SUnsuppPictrue);
   fBitmap.Assign(Graphic);
   if not (fBitmap.PixelFormat in SuppPixelFormats) then begin
@@ -518,13 +518,13 @@ end;
 
 function TStegImage.GetDataAsString: string;
 var
-  ss: TStringStream;
+  ss: TMemoryStream;
 begin
-  ss := TStringStream.Create;
+  ss := TMemoryStream.Create;
   try
     ss.LoadFromStream(fData);
     ss.Position := 0;
-    Result := ss.ReadString(ss.Size);
+    SetString(Result, PChar(ss.Memory), ss.Size div SizeOf(Char));
   finally
     ss.Free;
   end;
