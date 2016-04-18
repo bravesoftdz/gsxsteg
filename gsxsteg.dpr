@@ -26,11 +26,11 @@ program gsxsteg;
 {$MODE Delphi}
 {$ENDIF}
 
+{$i gsx.inc}
+
 {$IFDEF WINDOWS}
 {$APPTYPE CONSOLE}
 {$ENDIF}
-
-{$i gsx.inc}
 
 uses
   SysUtils,
