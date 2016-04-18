@@ -8,7 +8,8 @@ GPL
 
 ## Usage
 
-`gsxsteg [-batch] -<action> [-<argument> <value>]`
+~~~
+gsxsteg [-batch] -<action> [-<argument> <value>]
  
   batch: Batch mode, everything must be given with commandline arguments
 action can be:
@@ -21,3 +22,4 @@ argument can be:
   pass: Password
 Example:
   gsxsteg -batch -extract -medium mymedium.png -dest thedata.txt -pass "my secret pass"
+~~~
