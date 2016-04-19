@@ -51,3 +51,11 @@ resourcestring
   StrHide = 'Hide';
   StrPassword = 'Password';
 
+  SPasswordEmpty = 'Password can''t be empty.';
+  SPicTooSmall = 'Picture too small.';
+  SBitmapEmpty = 'Bitmap can''t be empty.';
+  SNothingToHide = 'Nothing to hide.';
+  SNoData = 'No data for this password.';
+  SUnsuppPictrue = 'Unknown bitmap format.';
+  SUnsuppPixelFormat = 'Unsupported pixel format, 24 Bit required.';
+  SSuppFilter = 'Supported formats';

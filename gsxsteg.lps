@@ -4,13 +4,12 @@
     <PathDelim Value="\"/>
     <Version Value="9"/>
     <BuildModes Active="Release"/>
-    <Units Count="8">
+    <Units Count="9">
       <Unit0>
         <Filename Value="gsxsteg.dpr"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
-        <TopLine Value="16"/>
-        <CursorPos X="19" Y="49"/>
+        <TopLine Value="19"/>
+        <CursorPos Y="47"/>
         <UsageCount Value="21"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
@@ -18,9 +17,10 @@
       <Unit1>
         <Filename Value="StegImage.pas"/>
         <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="47"/>
-        <CursorPos X="80" Y="76"/>
+        <TopLine Value="289"/>
+        <CursorPos X="13" Y="318"/>
         <UsageCount Value="21"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
@@ -63,14 +63,21 @@
       </Unit6>
       <Unit7>
         <Filename Value="gsx.inc"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="-1"/>
         <CursorPos X="4" Y="2"/>
         <UsageCount Value="10"/>
-        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit7>
+      <Unit8>
+        <Filename Value="gsxstegstrs_en.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="19"/>
+        <CursorPos X="70" Y="54"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit8>
     </Units>
-    <JumpHistory Count="14" HistoryIndex="13">
+    <JumpHistory Count="16" HistoryIndex="14">
       <Position1>
         <Filename Value="StegImage.pas"/>
         <Caret Line="69" Column="10" TopLine="35"/>
@@ -108,25 +115,33 @@
         <Caret Line="469" Column="51" TopLine="455"/>
       </Position9>
       <Position10>
-        <Filename Value="gsx.inc"/>
-        <Caret Line="2" Column="4"/>
+        <Filename Value="StegImage.pas"/>
+        <Caret Line="58" TopLine="31"/>
       </Position10>
       <Position11>
         <Filename Value="StegImage.pas"/>
-        <Caret Line="58" TopLine="31"/>
+        <Caret Line="303" Column="52" TopLine="287"/>
       </Position11>
       <Position12>
         <Filename Value="StegImage.pas"/>
-        <Caret Line="303" Column="52" TopLine="287"/>
+        <Caret Line="70" Column="20" TopLine="37"/>
       </Position12>
       <Position13>
         <Filename Value="StegImage.pas"/>
-        <Caret Line="70" Column="20" TopLine="37"/>
+        <Caret Line="68" Column="23" TopLine="60"/>
       </Position13>
       <Position14>
         <Filename Value="StegImage.pas"/>
-        <Caret Line="68" Column="23" TopLine="60"/>
+        <Caret Line="556" TopLine="514"/>
       </Position14>
+      <Position15>
+        <Filename Value="StegImage.pas"/>
+        <Caret Line="259" Column="97" TopLine="256"/>
+      </Position15>
+      <Position16>
+        <Filename Value="StegImage.pas"/>
+        <Caret Line="75" Column="3" TopLine="54"/>
+      </Position16>
     </JumpHistory>
   </ProjectSession>
 </CONFIG>

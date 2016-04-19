@@ -133,7 +133,7 @@ type
 implementation
 
 uses
-  Isaac, Math, HashSHA512;
+  Isaac, HashSHA512;
 
 type
   TIntArr = packed array[0..SizeOf(Cardinal)-1] of Byte;
@@ -147,15 +147,7 @@ const
   // Supported pixel format
   SuppPixelFormats: set of TPixelFormat = [{pf16bit, }pf24bit{, pf32bit}];
 
-resourcestring
-  SPasswordEmpty = 'Passwort darf nicht leer sein.';
-  SPicTooSmall = 'Bild ist zu klein.';
-  SBitmapEmpty = 'Bitmap darf nicht leer sein.';
-  SNothingToHide = 'Es gibt nichts zu verbergen.';
-  SNoData = 'Es existieren keine Daten zu diesem Passwort.';
-  SUnsuppPictrue = 'Nicht bekanntes Bild-Datei Format.';
-  SUnsuppPixelFormat = 'Nicht bekanntes Pixel Format, 24 Bit notwendig.';
-  SSuppFilter = 'Bekannte Formate';
+{$i gsxstegstrs_en.inc}
 
 constructor TStegImage.Create;
 begin
@@ -250,7 +242,7 @@ end;
 
 procedure TStegImage.SetCoords(Value: TPointArray);
 begin
-  // Set cooridinates to use, should not be changed
+  // Set coordinates to use, should not be changed
   SetLength(fCoords, High(Value));
   Move(Value, fCoords, SizeOf(Value));
 end;
@@ -323,6 +315,7 @@ begin
   cc := Low(fCoords);
   curbyte := 0;
   EmbedInt(size, cc, curbyte, pixel);
+  data := 0;
   while fData.Read(data, 1) <> 0 do begin
     EmbedByte(data, cc, curbyte, pixel);
     DoOnProgress(fData.Position, size, ab);
@@ -561,8 +554,4 @@ begin
   fData.SaveToStream(Stream);
 end;
 
-initialization
-
-finalization
-  
 end.

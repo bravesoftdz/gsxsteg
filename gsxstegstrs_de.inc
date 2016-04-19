@@ -55,3 +55,11 @@ resourcestring
   StrHide = 'Verbergen';
   StrPassword = 'Passwort';
 
+  SPasswordEmpty = 'Passwort darf nicht leer sein.';
+  SPicTooSmall = 'Bild ist zu klein.';
+  SBitmapEmpty = 'Bitmap darf nicht leer sein.';
+  SNothingToHide = 'Es gibt nichts zu verbergen.';
+  SNoData = 'Es existieren keine Daten zu diesem Passwort.';
+  SUnsuppPictrue = 'Nicht bekanntes Bild-Datei Format.';
+  SUnsuppPixelFormat = 'Nicht bekanntes Pixel Format, 24 Bit notwendig.';
+  SSuppFilter = 'Bekannte Formate';
