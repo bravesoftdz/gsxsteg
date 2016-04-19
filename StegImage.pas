@@ -133,7 +133,7 @@ type
 implementation
 
 uses
-  Isaac, HashSHA512;
+  Isaac, HashSHA512, StegLang;
 
 type
   TIntArr = packed array[0..SizeOf(Cardinal)-1] of Byte;
@@ -146,8 +146,6 @@ type
 const
   // Supported pixel format
   SuppPixelFormats: set of TPixelFormat = [{pf16bit, }pf24bit{, pf32bit}];
-
-{$i gsxstegstrs_en.inc}
 
 constructor TStegImage.Create;
 begin

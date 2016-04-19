@@ -4,7 +4,7 @@
     <PathDelim Value="\"/>
     <Version Value="9"/>
     <BuildModes Active="Release"/>
-    <Units Count="9">
+    <Units Count="10">
       <Unit0>
         <Filename Value="gsxsteg.dpr"/>
         <IsPartOfProject Value="True"/>
@@ -17,7 +17,6 @@
       <Unit1>
         <Filename Value="StegImage.pas"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <TopLine Value="289"/>
         <CursorPos X="13" Y="318"/>
@@ -76,8 +75,19 @@
         <UsageCount Value="10"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit8>
+      <Unit9>
+        <Filename Value="StegLang.pas"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="57"/>
+        <CursorPos X="16" Y="74"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit9>
     </Units>
-    <JumpHistory Count="16" HistoryIndex="14">
+    <JumpHistory Count="16" HistoryIndex="15">
       <Position1>
         <Filename Value="StegImage.pas"/>
         <Caret Line="69" Column="10" TopLine="35"/>
@@ -139,8 +149,7 @@
         <Caret Line="259" Column="97" TopLine="256"/>
       </Position15>
       <Position16>
-        <Filename Value="StegImage.pas"/>
-        <Caret Line="75" Column="3" TopLine="54"/>
+        <Filename Value="StegLang.pas"/>
       </Position16>
     </JumpHistory>
   </ProjectSession>

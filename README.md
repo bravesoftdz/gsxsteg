@@ -32,6 +32,14 @@ Example:
   gsxsteg -batch -extract -medium mymedium.png -dest thedata.txt -pass "my secret pass"
 ~~~
 
+## Compiling
+
+Delphi
+: Open `gsxsteg.dproj` and click Compile
+
+Lazarus
+: Open `gsxsteg.lpi` and click Start -> Compile or type `lazbuild ./gsxsteg.lpi --build-all --build-mode=Release`
+
 ## Details
 
 1. Make an array with possible coordinates.

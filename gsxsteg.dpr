@@ -35,6 +35,7 @@ program gsxsteg;
 uses
   SysUtils,
   Classes,
+  StegLang,
   StegImage in 'StegImage.pas';
 
 const
@@ -42,8 +43,6 @@ const
 
 type
   TStegAction = (saUnknown, saHide, saExtract);
-
-{$i gsxstegstrs_en.inc}
 
 var
   // Batch mode

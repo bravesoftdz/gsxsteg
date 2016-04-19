@@ -20,7 +20,64 @@
  $Id: $
 }
 
+unit StegLang;
+
+{$i gsx.inc}
+
+interface
+
+{$IFDEF LANG_EN}
+  {$IFDEF LANG_DE}
+    {$ERROR Undefine either LANG_EN or LANG_DE}
+  {$ENDIF}
+{$ENDIF}
+
 resourcestring
+{$IFDEF LANG_DE}
+  SVersion = 'GSXSteg Version %s';
+  SCopy = 'Copyright (C) 2007-2008, Stefan Ascher';
+  SInfo = 'Teil-Programm von GPGSX'#13#10 +
+    'http://stievie.bplaced.net/gpgsx/'#13#10 +
+    #13#10 +
+    'Lizensiert unter der GPL.'#13#10 +
+    'BENUTZUNG AUF EIGENE GEFAHR !';
+  SHelp = 'Aufruf:'#13#10 +
+    '  gsxsteg [-batch] -<aktion> [-<argument> <wert>]'#13#10 +
+    #13#10 +
+    '  batch:   Batch-Modus, alles muss in Kommandozeilenargumenten angegeben werden'#13#10 +
+    'aktion kann sein:'#13#10 +
+    '  hide:    Daten in einem Medium verbergen'#13#10 +
+    '  extract: Daten aus einem Medium extrahieren'#13#10 +
+    'argument kann sein:'#13#10 +
+    '  medium:  Die Medium-Datei'#13#10 +
+    '  dest:    Die Ziel-Datei (optional)'#13#10 +
+    '  msg:     Dateiname mit zu verbergender Mitteilung'#13#10 +
+    '  pass:    Passwort'#13#10 +
+    'Beispiel:'#13#10 +
+    '  gsxsteg -batch -extract -medium meinmedium.png -dest diedaten.txt -pass "mein geheimes passwort"';
+
+  SCapacity = 'Kapazität: %d Byte';
+  SMediumDoesNotExist = 'Medium existiert nicht';
+  SFileSize = 'Dateigrösse: %d Byte';
+  SHidefileDosNotExist = 'Zu verbergende Datei existiert nicht';
+  SWrongArgs = 'Falsche oder fehlende Argumente';
+
+  // Values
+  StrMedium = 'Medium';
+  StrDestination = 'Ziel';
+  StrHide = 'Verbergen';
+  StrPassword = 'Passwort';
+
+  SPasswordEmpty = 'Passwort darf nicht leer sein.';
+  SPicTooSmall = 'Bild ist zu klein.';
+  SBitmapEmpty = 'Bitmap darf nicht leer sein.';
+  SNothingToHide = 'Es gibt nichts zu verbergen.';
+  SNoData = 'Es existieren keine Daten zu diesem Passwort.';
+  SUnsuppPictrue = 'Nicht bekanntes Bild-Datei Format.';
+  SUnsuppPixelFormat = 'Nicht bekanntes Pixel Format, 24 Bit notwendig.';
+  SSuppFilter = 'Bekannte Formate';
+{$ENDIF}
+{$IFDEF LANG_EN}
   SVersion = 'gsxsteg Version %s';
   SCopy = 'Copyright (C) 2007-2008, Stefan Ascher';
   SInfo = 'License GPL.';
@@ -59,3 +116,8 @@ resourcestring
   SUnsuppPictrue = 'Unknown bitmap format.';
   SUnsuppPixelFormat = 'Unsupported pixel format, 24 Bit required.';
   SSuppFilter = 'Supported formats';
+{$ENDIF}
+
+implementation 
+
+end.

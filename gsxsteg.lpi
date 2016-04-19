@@ -69,7 +69,7 @@
         <PackageName Value="LCLBase"/>
       </Item2>
     </RequiredPackages>
-    <Units Count="3">
+    <Units Count="4">
       <Unit0>
         <Filename Value="gsxsteg.dpr"/>
         <IsPartOfProject Value="True"/>
@@ -82,6 +82,10 @@
         <Filename Value="hashes\HashSHA512.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit2>
+      <Unit3>
+        <Filename Value="StegLang.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit3>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
