@@ -289,6 +289,10 @@ begin
       CurByte := 0;
     end;
   end;
+  if (CurByte <> ps) then begin
+    // Store remaining
+    fBitmap.Canvas.Pixels[p.x, p.y] := TColor(pixelcol);
+  end;
 end;
 
 procedure TStegImage.Embed;
@@ -508,17 +512,9 @@ begin
 end;
 
 function TStegImage.GetDataAsString: string;
-var
-  ss: TMemoryStream;
 begin
-  ss := TMemoryStream.Create;
-  try
-    ss.LoadFromStream(fData);
-    ss.Position := 0;
-    SetString(Result, PChar(ss.Memory), ss.Size div SizeOf(Char));
-  finally
-    ss.Free;
-  end;
+  fData.Position := 0;
+  SetString(Result, PChar(fData.Memory), fData.Size div SizeOf(Char));
 end;
 
 procedure TStegImage.SaveDataToFile(const AFilename: string);
