@@ -1,0 +1,315 @@
+object MainForm: TMainForm
+  Left = 1994
+  Height = 372
+  Top = 269
+  Width = 506
+  Caption = 'gsxsteg'
+  ClientHeight = 372
+  ClientWidth = 506
+  LCLVersion = '1.6.0.4'
+  object PageControl1: TPageControl
+    Left = 8
+    Height = 356
+    Top = 8
+    Width = 490
+    ActivePage = TabSheet1
+    Align = alClient
+    BorderSpacing.Around = 8
+    TabIndex = 0
+    TabOrder = 0
+    object TabSheet1: TTabSheet
+      Caption = 'Extract'
+      ClientHeight = 328
+      ClientWidth = 482
+      object Label5: TLabel
+        Left = 8
+        Height = 15
+        Top = 8
+        Width = 48
+        Caption = 'Medium:'
+        ParentColor = False
+      end
+      object txtMedium1: TFileNameEdit
+        Left = 8
+        Height = 23
+        Top = 25
+        Width = 461
+        Filter = 'Supported Files (*.bmp;*.png)|*.bmp;*.png|All Files (*.*)|*.*'
+        FilterIndex = 0
+        HideDirectories = False
+        ButtonWidth = 23
+        NumGlyphs = 1
+        Anchors = [akTop, akLeft, akRight]
+        MaxLength = 0
+        TabOrder = 0
+      end
+      object Label6: TLabel
+        Left = 8
+        Height = 15
+        Top = 56
+        Width = 53
+        Caption = 'Password:'
+        ParentColor = False
+      end
+      object txtPassword1: TEdit
+        Left = 8
+        Height = 23
+        Top = 73
+        Width = 461
+        Anchors = [akTop, akLeft, akRight]
+        EchoMode = emPassword
+        PasswordChar = '*'
+        TabOrder = 1
+      end
+      object Label7: TLabel
+        Left = 8
+        Height = 15
+        Top = 104
+        Width = 49
+        Caption = 'Message:'
+        ParentColor = False
+      end
+      object txtMessage: TMemo
+        Left = 8
+        Height = 164
+        Top = 121
+        Width = 461
+        Anchors = [akTop, akLeft, akRight, akBottom]
+        ReadOnly = True
+        ScrollBars = ssAutoBoth
+        TabOrder = 2
+      end
+      object btnExtract: TButton
+        Left = 8
+        Height = 25
+        Top = 298
+        Width = 75
+        Anchors = [akLeft, akBottom]
+        Caption = 'Extract'
+        OnClick = btnExtractClick
+        TabOrder = 3
+      end
+      object btnSaveMessage: TButton
+        Left = 96
+        Height = 25
+        Top = 298
+        Width = 75
+        Anchors = [akLeft, akBottom]
+        Caption = 'Save...'
+        OnClick = btnSaveMessageClick
+        TabOrder = 4
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = 'Hide'
+      ClientHeight = 328
+      ClientWidth = 482
+      object Label1: TLabel
+        Left = 8
+        Height = 15
+        Top = 8
+        Width = 48
+        Caption = 'Medium:'
+        ParentColor = False
+      end
+      object txtMedium: TFileNameEdit
+        Left = 8
+        Height = 23
+        Top = 25
+        Width = 461
+        OnAcceptFileName = txtMediumAcceptFileName
+        Filter = 'Supported Files (*.bmp;*.png)|*.bmp;*.png|All Files (*.*)|*.*'
+        FilterIndex = 0
+        HideDirectories = False
+        ButtonWidth = 23
+        NumGlyphs = 1
+        Anchors = [akTop, akLeft, akRight]
+        MaxLength = 0
+        TabOrder = 0
+      end
+      object Label2: TLabel
+        Left = 8
+        Height = 15
+        Top = 56
+        Width = 53
+        Caption = 'Password:'
+        ParentColor = False
+      end
+      object txtPassword: TEdit
+        Left = 8
+        Height = 23
+        Top = 73
+        Width = 461
+        Anchors = [akTop, akLeft, akRight]
+        EchoMode = emPassword
+        PasswordChar = '*'
+        TabOrder = 1
+      end
+      object Label4: TLabel
+        Left = 8
+        Height = 15
+        Top = 104
+        Width = 61
+        Caption = 'File to hide:'
+        ParentColor = False
+      end
+      object txtFileToHide: TFileNameEdit
+        Left = 8
+        Height = 23
+        Top = 123
+        Width = 461
+        Filter = 'All Files (*.*)|*.*'
+        FilterIndex = 0
+        HideDirectories = False
+        ButtonWidth = 23
+        NumGlyphs = 1
+        Anchors = [akTop, akLeft, akRight]
+        MaxLength = 0
+        TabOrder = 2
+      end
+      object Label3: TLabel
+        Left = 8
+        Height = 15
+        Top = 152
+        Width = 89
+        Caption = 'Message to hide:'
+        ParentColor = False
+      end
+      object txtMessageToHide: TMemo
+        Left = 8
+        Height = 116
+        Top = 170
+        Width = 461
+        Anchors = [akTop, akLeft, akRight, akBottom]
+        ScrollBars = ssAutoBoth
+        TabOrder = 3
+      end
+      object btnHide: TButton
+        Left = 8
+        Height = 25
+        Top = 298
+        Width = 75
+        Anchors = [akLeft, akBottom]
+        Caption = 'Hide it...'
+        OnClick = btnHideClick
+        TabOrder = 4
+      end
+      object lblCapacity: TLabel
+        Left = 104
+        Height = 15
+        Top = 8
+        Width = 70
+        Caption = 'Capacity: n/a'
+        ParentColor = False
+      end
+    end
+    object TabSheet3: TTabSheet
+      Caption = 'About'
+      ClientHeight = 328
+      ClientWidth = 482
+      object Image1: TImage
+        Left = 16
+        Height = 96
+        Top = 16
+        Width = 96
+        Picture.Data = {
+          1754506F727461626C654E6574776F726B477261706869637505000089504E47
+          0D0A1A0A0000000D4948445200000062000000620806000000ABA5060E000005
+          3C4944415478DAED9D4B6C5B451486C78FC48EEDB4491452D2E04482266A4CDC
+          C61551915091BA66C53B44A404ABE5D1F20A08B10075C1AEBC5409B5404155DA
+          EED967838488A2065880A8EA08A2225255950A2490C48F5B2736CEA69BFB1F60
+          D27B7DC7F67F96BF4633637FE75E9D396766AE6F7676B6DCDEDEAE68DED9F2F2
+          B2F2653299F2E0E0A00F35C866B3E56834EAA3EEAE3E3D3D5D26080374823044
+          27084374823044270843F45B207A7B7B552DDB5F9FFC04F57CC9827A8B3F04F5
+          B617939ECC7F6666A63EC2D76B1F5C2CAF4F2DD8E65F3C14576BE7E76DFA1D13
+          7B156ADF39F7B0E2AB89200882200882208C04A11B357915A548E3967239A887
+          C251A85B852CD4FD918823F3D4B52D474DFFE681AB9F676C7AD7F3C38E78A034
+          AEFF899D2A0F20B54DDEAFF2E77FF9DFEDA36FECF7E449D9F2AB892008822008
+          82201A0784143549514A5309725325B50E75BF0A42BD28B46F3B360CF5EBA7BE
+          C7FD1736A01E12A2204B88B24AE100D4BB8FDDA7DCB4FF8C9A240F6C39D4AFFC
+          677FB5E9EBE9B82A9EFDD9FE87A413B0BD55696F5DB862D3775C7C047AE0C27B
+          5F97FF98B23B47D76842AD02A7E9AC78B875CEFE44A8C77B60FBE8E4305C77F4
+          CF3DEDEDAB892008822008822008428A9AA428252644413876D9CCEDE01C5493
+          D03EDB82F5E82AD643319C535A13724AD2B8C6E69A363D10AD0BBA8F24A1E7FB
+          D303CA02BA1AEB831ED851F981289E2FBD9E54C8F3FB1E4DAAC229BBBEFD2DBC
+          5ED8A8AC1774C6F57C1D4110044110044110042181703BD79413A226D18A585E
+          EDF06975D3BA5486FACD6DB87DFCE87EBD793A6455CB35158527A2B5E299503F
+          5CD14F022778778FBA76E1924DEE191F82FAEE87EE85FD848EE3272EF5ED6133
+          370F100441100441100441B8BDAF292454D08A4274F47714E7B276BDBCA635CF
+          858F6350EFCCE1E8CE8A05948E39B55FEBB6F635A1AC6669BC177A5ACF6802C6
+          ED41C1F34B6FA7D4D52FECEB97833FC65538F29D4D2FE446A07EE9C441D84F6A
+          AC5F591F01673A3E0CE7DF39917475C7E06D6D1E2008822008822088C600E1F6
+          19BAABA7E7A06E0571EEE8EEE7F250BFF9DB65AD719BFB1250BF72069700A5DC
+          9454D273AAD257B53374F3EF7F55FEF38CDDD36247F7A8EB20FE7FE09B7BA087
+          AF64A22A70E39C4DDFE87A06EA819113B09FCB271F84E30E6CAE3B4E8375CDAB
+          4957B3B8553BA84210044110044110B50BC2F55CD31ACE352DB59B1535ED2836
+          435DDAAFD524ECEF5A5105A84BBBCA5D394307D7118F2560AD39F70ECEA61EA8
+          C21381C6DD37BA4FAB161F4B2760AD5C3A2732F0C3B8B3AF2682200882200882
+          681C104EED6B92765F8BE651856E7B1657E8C4E491D26BEE78AE49B766BD32D6
+          E5486DDAEDECEBD053FD70DCD637935AF3AFDA828E200882200882200842F70C
+          DD3615867AD18F2B5CD2497FD15CDE0D9E8FE3A8ACF9F79256FF9110FE1F1CDF
+          D7249D8FE8399282F173706297D6294EAF76FA053F4CA91B5FDA1388771DD8AD
+          963EB5F7D3F1C2905AF9CC5EB3BEF31567EE18D9F2411582200882200882681C
+          10BAB926E9564921D8D1BF610017E8C4FE6361BD9B0736027EA8EF7C6D447961
+          5BCE354937800535E36DF1F4E89349ADFEBB27F54E95465EDA0B3D7F68FED9DA
+          3AA842100441100441108D03C2B4BBC1EBF5364BC95CD9D7E4C439826ADC54A6
+          5353F6FCD544100441100441100461DA77E8EAF5CB299219FB1DBA7ABD15BFE6
+          3EF64410044110044110E680302D6A92ACD6BFD22B99B151D396BE6D3405BE6D
+          9476A6A6DCB0AF26823064620461C8C408C29089352C885A899AEAD56A2E6AAA
+          57BDE65E4DF5AA1384213A4118A2138421FA2D108AE6A92D2E2EAA7F00D4BC15
+          CA2DD1D8DD0000000049454E44AE426082
+        }
+      end
+      object Label8: TLabel
+        Left = 132
+        Height = 45
+        Top = 16
+        Width = 115
+        Caption = 'gsxsteg'
+        Font.Height = -32
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object lblVersion: TLabel
+        Left = 132
+        Height = 15
+        Top = 68
+        Width = 66
+        Caption = 'Version 1.0.3'
+        ParentColor = False
+      end
+      object Label10: TLabel
+        Left = 16
+        Height = 15
+        Top = 128
+        Width = 86
+        Caption = 'by sa, 2007-2016'
+        ParentColor = False
+      end
+      object lblLink: TLabel
+        Cursor = crHandPoint
+        Left = 16
+        Height = 15
+        Top = 152
+        Width = 174
+        Caption = 'https://0x2a.wtf/projects/gsxsteg'
+        Font.Color = clHighlight
+        Font.Style = [fsUnderline]
+        ParentColor = False
+        ParentFont = False
+        OnClick = lblLinkClick
+      end
+    end
+  end
+  object dlgTarget: TSaveDialog
+    Filter = 'Supported Files (*.bmp;*.png)|*.bmp;*.png|All Files (*.*)|*.*'
+    left = 376
+    top = 256
+  end
+  object dlgSaveMessage: TSaveDialog
+    Filter = 'All Files (*.*)|*.*'
+    left = 288
+    top = 224
+  end
+end
