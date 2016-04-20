@@ -93,8 +93,13 @@ begin
         si.LoadDataFromString(txtMessageToHide.Text);
       end;
       si.Password := txtPassword.Text;
-      si.Embed;
-      si.SaveToFile(dlgTarget.FileName);
+      try
+        si.Embed;
+        si.SaveToFile(dlgTarget.FileName);
+      except
+        on E: Exception do
+          Application.MessageBox(PChar(E.Message), 'Error', MB_OK or MB_ICONERROR);
+      end;
     finally
       si.Free;
     end;
@@ -120,8 +125,13 @@ begin
     try
       si.LoadFromFile(txtMedium1.FileName);
       si.Password := txtPassword1.Text;
-      si.Extract;
-      si.SaveDataToFile(dlgSaveMessage.FileName);
+      try
+        si.Extract;
+        si.SaveDataToFile(dlgSaveMessage.FileName);
+      except
+        on E: Exception do
+          Application.MessageBox(PChar(E.Message), 'Error', MB_OK or MB_ICONERROR);
+      end;
     finally
       si.Free;
     end;
@@ -146,8 +156,13 @@ begin
   try
     si.LoadFromFile(txtMedium1.FileName);
     si.Password := txtPassword1.Text;
-    si.Extract;
-    txtMessage.Text := si.GetDataAsString;
+    try
+      si.Extract;
+      txtMessage.Text := si.GetDataAsString;
+    except
+      on E: Exception do
+        Application.MessageBox(PChar(E.Message), 'Error', MB_OK or MB_ICONERROR);
+    end;
   finally
     si.Free;
   end;

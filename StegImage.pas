@@ -461,10 +461,10 @@ begin
   // Assign it to the bitmap
   fBitmap.Assign(Graphic);
   // If Pixelformat is not supported clear bitmap and raise an exception
-  if not (fBitmap.PixelFormat in SuppPixelFormats) then begin
+{  if not (fBitmap.PixelFormat in SuppPixelFormats) then begin
     fBitmap.Assign(nil);
     raise TStegException.Create(SUnsuppPixelFormat);
-  end;
+  end;}
 end;
 
 procedure TStegImage.SaveToFile(const Filename: string);
