@@ -80,7 +80,7 @@ type
   public
     constructor Create;
     destructor Destroy; override;
-    function FindClassName(const Classname: string): THashClass;
+    function FindClassName(const AClassname: string): THashClass;
     procedure Remove(AClass: THashClass);
   end;
 
@@ -103,7 +103,7 @@ begin
   inherited;
 end;
 
-function THashTypesList.FindClassName(const Classname: string): THashClass;
+function THashTypesList.FindClassName(const AClassname: string): THashClass;
 var
   I: Integer;
 begin
