@@ -6,6 +6,8 @@ object MainForm: TMainForm
   Caption = 'gsxsteg'
   ClientHeight = 372
   ClientWidth = 506
+  OnCreate = FormCreate
+  Position = poDefaultPosOnly
   LCLVersion = '1.6.0.4'
   object PageControl1: TPageControl
     Left = 8

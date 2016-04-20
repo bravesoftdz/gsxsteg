@@ -44,6 +44,7 @@ type
     procedure btnExtractClick(Sender: TObject);
     procedure btnHideClick(Sender: TObject);
     procedure btnSaveMessageClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
     procedure lblLinkClick(Sender: TObject);
     procedure txtMediumAcceptFileName(Sender: TObject; var Value: String);
   private
@@ -136,6 +137,11 @@ begin
       si.Free;
     end;
   end;
+end;
+
+procedure TMainForm.FormCreate(Sender: TObject);
+begin
+  PageControl1.ActivePageIndex := 0;
 end;
 
 procedure TMainForm.btnExtractClick(Sender: TObject);
