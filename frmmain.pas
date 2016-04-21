@@ -49,6 +49,7 @@ type
     procedure txtMediumAcceptFileName(Sender: TObject; var Value: String);
   private
     { private declarations }
+    procedure AppException(Sender: TObject; E: Exception);
   public
     { public declarations }
   end;
@@ -145,6 +146,14 @@ procedure TMainForm.FormCreate(Sender: TObject);
 begin
   PageControl1.ActivePageIndex := 0;
   lblVersion.Caption := Format('Version %s', [VERSION]);
+  Application.OnException := @AppException;
+end;
+
+procedure TMainForm.AppException(Sender: TObject; E: Exception);
+begin
+  // Ignore focus stuff when switching tabs
+  if not (E is EInvalidOperation) then
+    Application.HandleException(Sender);
 end;
 
 procedure TMainForm.btnExtractClick(Sender: TObject);
