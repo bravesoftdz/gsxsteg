@@ -20,6 +20,8 @@ type
     Label1: TLabel;
     Label10: TLabel;
     lblCapacity: TLabel;
+    lblFilesize: TLabel;
+    lblMsgsize: TLabel;
     lblLink: TLabel;
     Label2: TLabel;
     Label3: TLabel;
@@ -46,7 +48,9 @@ type
     procedure btnSaveMessageClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure lblLinkClick(Sender: TObject);
+    procedure txtFileToHideAcceptFileName(Sender: TObject; var Value: String);
     procedure txtMediumAcceptFileName(Sender: TObject; var Value: String);
+    procedure txtMessageToHideChange(Sender: TObject);
   private
     { private declarations }
     procedure AppException(Sender: TObject; E: Exception);
@@ -191,6 +195,15 @@ begin
   OpenURL((Sender as TLabel).Caption);
 end;
 
+procedure TMainForm.txtFileToHideAcceptFileName(Sender: TObject;
+  var Value: String);
+begin
+  if FileExists(Value) then
+    lblFilesize.Caption := Format('Size: %d Byte', [FileUtil.FileSize(Value)])
+  else
+    lblFilesize.Caption := 'Size: n/a';
+end;
+
 procedure TMainForm.txtMediumAcceptFileName(Sender: TObject; var Value: String);
 var
   si: TStegImage;
@@ -206,6 +219,14 @@ begin
   finally
     si.Free;
   end;
+end;
+
+procedure TMainForm.txtMessageToHideChange(Sender: TObject);
+var
+  s: string;
+begin
+  s := txtMessageToHide.Text;
+  lblMsgsize.Caption := Format('Size: %d Byte', [Length(s) * SizeOf(Char)]);
 end;
 
 end.
