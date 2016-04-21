@@ -38,8 +38,7 @@ uses
   StegLang,
   StegImage in 'StegImage.pas';
 
-const
-  VERSION = '1.0.3';
+{$I version.inc}
 
 type
   TStegAction = (saUnknown, saHide, saExtract);

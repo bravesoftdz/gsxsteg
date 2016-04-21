@@ -51,7 +51,6 @@
         <DCC_UnitSearchPath>C:\Programme\Borland\Delphi6\Lib;C:\Programme\Borland\Delphi6\Lib\ElTree;C:\Programme\Borland\Delphi6\Lib\ElTree\Source;C:\Programme\Borland\Delphi6\Source\Vcl;C:\Programme\Borland\Delphi6\Projects\gpgsxsrc;C:\Programme\Borland\Delphi6\Projects\gpgsxsrc\paszlib;C:\Programme\Borland\Delphi6\Projects\gpgsxsrc\paszlib\zip;C:\Programme\Borland\Delphi6\Projects\gpgsxsrc\hashes;C:\Programme\Borland\Delphi6\Projects\gpgsxsrc\pngimage;C:\Programme\Borland\Delphi6\Projects\gpgsxsrc\pngimage\obj;hashes;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
         <DCC_DebugInformation>false</DCC_DebugInformation>
         <DCC_E>false</DCC_E>
-        <Icon_MainIcon>gsxsteg_Icon.ico</Icon_MainIcon>
         <DCC_IntegerOverflowCheck>true</DCC_IntegerOverflowCheck>
         <DCC_ImageBase>00400000</DCC_ImageBase>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Winapi;Vcl;$(DCC_Namespace)</DCC_Namespace>

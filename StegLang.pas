@@ -35,7 +35,7 @@ interface
 resourcestring
 {$IFDEF LANG_DE}
   SVersion = 'GSXSteg Version %s';
-  SCopy = 'Copyright (C) 2007-2008, Stefan Ascher';
+  SCopy = 'Copyright (C) 2007-2016, Stefan Ascher';
   SInfo = 'Teil-Programm von GPGSX'#13#10 +
     'http://stievie.bplaced.net/gpgsx/'#13#10 +
     #13#10 +
@@ -79,7 +79,7 @@ resourcestring
 {$ENDIF}
 {$IFDEF LANG_EN}
   SVersion = 'gsxsteg Version %s';
-  SCopy = 'Copyright (C) 2007-2008, Stefan Ascher';
+  SCopy = 'Copyright (C) 2007-2016, Stefan Ascher';
   SInfo = 'License GPL.';
   SHelp = 'Usage:'#13#10 +
     '  gsxsteg [-batch] -<action> [-<argument> <value>]'#13#10 +

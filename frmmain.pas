@@ -63,6 +63,8 @@ uses
 
 {$R *.lfm}
 
+{$I version.inc}
+
 { TMainForm }
 
 procedure TMainForm.btnHideClick(Sender: TObject);
@@ -142,6 +144,7 @@ end;
 procedure TMainForm.FormCreate(Sender: TObject);
 begin
   PageControl1.ActivePageIndex := 0;
+  lblVersion.Caption := Format('Version %s', [VERSION]);
 end;
 
 procedure TMainForm.btnExtractClick(Sender: TObject);

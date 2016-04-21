@@ -14,10 +14,10 @@ object MainForm: TMainForm
     Height = 356
     Top = 8
     Width = 490
-    ActivePage = TabSheet1
+    ActivePage = TabSheet3
     Align = alClient
     BorderSpacing.Around = 8
-    TabIndex = 0
+    TabIndex = 2
     TabOrder = 0
     object TabSheet1: TTabSheet
       Caption = 'Extract'
