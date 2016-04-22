@@ -34,8 +34,8 @@ begin
   inherited;
   ControlStyle := [csCaptureMouse, csOpaque, csClickEvents, csDoubleClicks,
     csNeedsBorderPaint];
-  Color := clWindow;
   ParentColor := false;
+  Color := clWindow;
   DoubleBuffered := true;
 end;
 

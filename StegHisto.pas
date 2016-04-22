@@ -19,7 +19,7 @@ uses
   {$IFNDEF FPC}
   System.Types,
   {$ELSE}
-  LCLType, LCLIntf, IntfGraphics,
+  LCLType, LCLIntf,
   {$ENDIF}
   Classes, SysUtils, Graphics;
 
@@ -32,11 +32,7 @@ type
     FMaxRed, FMaxGreen, FMaxBlue: integer;
     FMeanRed, FMeanGreen, FMeanBlue: double;
 
-    {$IFDEF FPC}
-    FBitmap: TLazIntfImage;
-    {$ELSE}
     FBitmap: TBitmap;
-    {$ENDIF}
     procedure Process;
     function GetRed(Index: Byte): integer;
     function GetGreen(Index: Byte): integer;
@@ -44,7 +40,6 @@ type
   public
     constructor Create;
     destructor Destroy; override;
-
     procedure SetBitmap(Value: TBitmap);
 
     property Red[Index: Byte]: integer read GetRed;
@@ -63,10 +58,6 @@ implementation
 uses
   Math;
 
-type
-  TRGBTripleRow = array[0..High(Word)-1] of TRGBTriple;
-  PRGBTripleRow = ^TRGBTripleRow;
-
 function ColorToRGB(AColor: TColor): TRGBTriple;
 begin
   with Result do begin
@@ -79,11 +70,7 @@ end;
 constructor TStegHisto.Create;
 begin
   inherited;
-  {$IFDEF FPC}
-  FBitmap := TLazIntfImage.Create(0, 0);
-  {$ELSE}
   FBitmap := TBitmap.Create;
-  {$ENDIF}
 end;
 
 destructor TStegHisto.Destroy;
@@ -94,11 +81,7 @@ end;
 
 procedure TStegHisto.SetBitmap(Value: TBitmap);
 begin
-  {$IFDEF FPC}
-  FBitmap.LoadFromBitmap(Value.Handle, Value.MaskHandle);
-  {$ELSE}
   FBitmap.Assign(Value);
-  {$ENDIF}
   Process;
 end;
 
@@ -119,11 +102,11 @@ end;
 
 procedure TStegHisto.Process;
 var
-  x, y, i, w, pc: integer;
+  x, y, i: integer;
+  PixelCol: TRGBTriple;
   sr, sg, sb: integer;
-  pp: PRGBTripleRow;
 begin
-  if (FBitmap.Width = 0) or (FBitmap.Height = 0) then
+  if FBitmap.Empty then
     Exit;
 
   for i := 0 to 255 do begin
@@ -139,29 +122,26 @@ begin
   FMeanBlue := 0.0;
 
   sr := 0; sg := 0; sb := 0;
-  w := FBitmap.Width;
-  for y := 0 to FBitmap.Height - 1 do begin
-    pp := FBitmap.{$IFDEF FPC}GetDataLineStart(y){$ELSE}ScanLine[y]{$ENDIF};
-    for x := 0 to w - 1 do begin
-      Inc(FRed[pp[x].rgbtRed]);
-      Inc(sr, pp[x].rgbtRed);
-      Inc(FGreen[pp[x].rgbtGreen]);
-      Inc(sg, pp[x].rgbtGreen);
-      Inc(FBlue[pp[x].rgbtBlue]);
-      Inc(sb, pp[x].rgbtBlue);
+  for x := 0 to FBitmap.Width - 1 do begin
+    for y := 0 to FBitmap.Height - 1 do begin
+      PixelCol := ColorToRGB(fBitmap.Canvas.Pixels[x, y]);
+      Inc(FRed[PixelCol.rgbtRed]);
+      Inc(sr, PixelCol.rgbtRed);
+      Inc(FGreen[PixelCol.rgbtGreen]);
+      Inc(sg, PixelCol.rgbtGreen);
+      Inc(FBlue[PixelCol.rgbtBlue]);
+      Inc(sb, PixelCol.rgbtBlue);
     end;
   end;
-  pc := (FBitmap.Width * FBitmap.Height);
-  FMeanRed := sr / pc;
-  FMeanGreen := sg / pc;
-  FMeanBlue := sb / pc;
+  FMeanRed := sr / (FBitmap.Width * FBitmap.Height);
+  FMeanGreen := sg / (FBitmap.Width * FBitmap.Height);
+  FMeanBlue := sb / (FBitmap.Width * FBitmap.Height);
 
   for i := 0 to 255 do begin
     FMaxRed := Max(FMaxRed, FRed[i]);
     FMaxGreen := Max(FMaxGreen, FGreen[i]);
     FMaxBlue := Max(FMaxBlue, FBlue[i]);
   end;
-
 end;
 
 end.
