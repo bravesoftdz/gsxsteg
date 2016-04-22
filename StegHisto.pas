@@ -1,0 +1,149 @@
+{
+  gsxsteg
+  2016, sa
+
+  RGB histogram
+}
+
+unit StegHisto;
+
+{$IFDEF FPC}
+  {$MODE Delphi}
+{$ENDIF}
+
+{$i gsx.inc}
+
+interface
+
+uses
+  {$IFNDEF FPC}
+  System.Types,
+  {$ELSE}
+  LCLType, LCLIntf,
+  {$ENDIF}
+  Classes, SysUtils, Graphics;
+
+type
+  TStegHisto = class
+  private
+    FRed: array[0..255] of Integer;
+    FGreen: array[0..255] of Integer;
+    FBlue: array[0..255] of Integer;
+    FMaxRed, FMaxGreen, FMaxBlue: integer;
+    FMeanRed, FMeanGreen, FMeanBlue: double;
+
+    FBitmap: TBitmap;
+    procedure Process;
+    procedure SetBitmap(Value: TBitmap);
+    function GetRed(Index: Byte): integer;
+    function GetGreen(Index: Byte): integer;
+    function GetBlue(Index: Byte): integer;
+  public
+    constructor Create;
+    destructor Destroy; override;
+
+    property Bitmap: TBitmap read FBitmap write SetBitmap;
+    property Red[Index: Byte]: integer read GetRed;
+    property Green[Index: Byte]: integer read GetGreen;
+    property Blue[Index: Byte]: integer read GetBlue;
+    property MaxRed: integer read FMaxRed;
+    property MaxGreen: integer read FMaxGreen;
+    property MaxBlue: integer read FMaxBlue;
+    property MeanRed: double read FMeanRed;
+    property MeanGreen: double read FMeanGreen;
+    property MeanBlue: double read FMeanBlue;
+  end;
+
+implementation
+
+uses
+  Math;
+
+function ColorToRGB(AColor: TColor): TRGBTriple;
+begin
+  with Result do begin
+    rgbtRed := GetRValue(AColor);
+    rgbtGreen := GetGValue(AColor);
+    rgbtBlue := GetBValue(AColor);
+  end;
+end;
+
+constructor TStegHisto.Create;
+begin
+  inherited;
+  FBitmap := TBitmap.Create;
+end;
+
+destructor TStegHisto.Destroy;
+begin
+  FBitmap.Free;
+  inherited;
+end;
+
+procedure TStegHisto.SetBitmap(Value: TBitmap);
+begin
+  FBitmap.Assign(Value);
+  Process;
+end;
+
+function TStegHisto.GetRed(Index: Byte): integer;
+begin
+  Result := FRed[Index];
+end;
+
+function TStegHisto.GetGreen(Index: Byte): integer;
+begin
+  Result := FGreen[Index];
+end;
+
+function TStegHisto.GetBlue(Index: Byte): integer;
+begin
+  Result := FBlue[Index];
+end;
+
+procedure TStegHisto.Process;
+var
+  x, y, i: integer;
+  PixelCol: TRGBTriple;
+  sr, sg, sb: integer;
+begin
+  if FBitmap.Empty then
+    Exit;
+
+  for i := 0 to 255 do begin
+    FRed[i] := 0;
+    FGreen[i] := 0;
+    FBlue[i] := 0;
+  end;
+  FMaxRed := 0;
+  FMaxGreen := 0;
+  FMaxBlue := 0;
+  FMeanRed := 0.0;
+  FMeanGreen := 0.0;
+  FMeanBlue := 0.0;
+
+  sr := 0; sg := 0; sb := 0;
+  for x := 0 to FBitmap.Width - 1 do begin
+    for y := 0 to FBitmap.Height - 1 do begin
+      PixelCol := ColorToRGB(fBitmap.Canvas.Pixels[x, y]);
+      Inc(FRed[PixelCol.rgbtRed]);
+      Inc(sr, PixelCol.rgbtRed);
+      Inc(FGreen[PixelCol.rgbtGreen]);
+      Inc(sg, PixelCol.rgbtGreen);
+      Inc(FBlue[PixelCol.rgbtBlue]);
+      Inc(sb, PixelCol.rgbtBlue);
+    end;
+  end;
+  FMeanRed := sr / (FBitmap.Width * FBitmap.Height);
+  FMeanGreen := sg / (FBitmap.Width * FBitmap.Height);
+  FMeanBlue := sb / (FBitmap.Width * FBitmap.Height);
+
+  for i := 0 to 255 do begin
+    FMaxRed := Max(FMaxRed, FRed[i]);
+    FMaxGreen := Max(FMaxGreen, FGreen[i]);
+    FMaxBlue := Max(FMaxBlue, FBlue[i]);
+  end;
+end;
+
+end.
+

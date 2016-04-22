@@ -64,7 +64,7 @@
         <PackageName Value="LCL"/>
       </Item1>
     </RequiredPackages>
-    <Units Count="4">
+    <Units Count="6">
       <Unit0>
         <Filename Value="gsxsgui.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -84,6 +84,15 @@
         <Filename Value="StegLang.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit3>
+      <Unit4>
+        <Filename Value="StegHisto.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="histogram.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Histogram"/>
+      </Unit5>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

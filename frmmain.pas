@@ -1,3 +1,8 @@
+{
+  gsxsteg
+  2016, sa
+}
+
 unit frmmain;
 
 {$mode objfpc}{$H+}
@@ -7,7 +12,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ComCtrls,
-  ExtCtrls, EditBtn, StdCtrls, LCLType, LCLIntf;
+  ExtCtrls, EditBtn, StdCtrls, LCLType, LCLIntf, Histogram, StegHisto;
 
 type
   { TMainForm }
@@ -35,12 +40,16 @@ type
     lblVersion: TLabel;
     PageControl1: TPageControl;
     dlgSaveMessage: TSaveDialog;
+    pnlHisto: TPanel;
+    pnlHistoFile: TPanel;
     TabSheet1: TTabSheet;
     TabSheet2: TTabSheet;
     TabSheet3: TTabSheet;
+    TabSheet4: TTabSheet;
     txtFileToHide: TFileNameEdit;
     txtMedium: TFileNameEdit;
     txtMedium1: TFileNameEdit;
+    txtHistoFile: TFileNameEdit;
     txtMessageToHide: TMemo;
     txtMessage: TMemo;
     txtPassword: TEdit;
@@ -49,12 +58,16 @@ type
     procedure btnHideClick(Sender: TObject);
     procedure btnSaveMessageClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
     procedure lblLinkClick(Sender: TObject);
     procedure txtFileToHideAcceptFileName(Sender: TObject; var Value: String);
+    procedure txtHistoFileAcceptFileName(Sender: TObject; var Value: String);
     procedure txtMediumAcceptFileName(Sender: TObject; var Value: String);
     procedure txtMessageToHideChange(Sender: TObject);
   private
     { private declarations }
+    FStegHisto: TStegHisto;
+    FHistogram: THistogram;
     procedure AppException(Sender: TObject; E: Exception);
   public
     { public declarations }
@@ -155,6 +168,17 @@ begin
   PageControl1.ActivePageIndex := 0;
   lblVersion.Caption := Format('Version %s', [VERSION]);
   Application.OnException := @AppException;
+
+  FHistogram := THistogram.Create(pnlHisto);
+  FHistogram.Parent := pnlHisto;
+  FHistogram.Align := alClient;
+end;
+
+procedure TMainForm.FormDestroy(Sender: TObject);
+begin
+  FHistogram.StegHisto := nil;
+  if Assigned(FStegHisto) then
+    FStegHisto.Free;
 end;
 
 procedure TMainForm.AppException(Sender: TObject; E: Exception);
@@ -207,6 +231,36 @@ begin
     lblFilesize.Caption := Format('Size: %d Byte', [FileUtil.FileSize(Value)])
   else
     lblFilesize.Caption := 'Size: n/a';
+end;
+
+procedure TMainForm.txtHistoFileAcceptFileName(Sender: TObject;
+  var Value: String);
+var
+  pic: TPicture;
+  bmp: TBitmap;
+begin
+  FHistogram.StegHisto := nil;
+  if Assigned(FStegHisto) then
+    FStegHisto.Free;
+  if FileExists(Value) then begin
+    pic := TPicture.Create;
+    Screen.Cursor := crHourGlass;
+    try
+      pic.LoadFromFile(Value);
+      bmp := TBitmap.Create;
+      try
+        FStegHisto := TStegHisto.Create;
+        bmp.Assign(pic.Graphic);
+        FStegHisto.Bitmap := bmp;
+        FHistoGram.StegHisto := FStegHisto;
+      finally
+        bmp.Free;
+      end;
+    finally
+      pic.Free;
+      Screen.Cursor := crDefault;
+    end;
+  end;
 end;
 
 procedure TMainForm.txtMediumAcceptFileName(Sender: TObject; var Value: String);
