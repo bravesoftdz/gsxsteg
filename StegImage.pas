@@ -86,6 +86,7 @@ type
     fData: TMemoryStream;
     fOccRatio: double;
     fOnProgress: TStegProgressEvent;
+    fUsedPixel: integer;
 //    fPixelSize: integer;
     procedure InitCoords;
     procedure RandomizeCoords;
@@ -100,6 +101,7 @@ type
     function ExtractByte(var Coord, CurByte: integer; var PixelCol: TColorRec): Byte;
     function ExtractInt(var Coord, CurByte: integer; var PixelCol: TColorRec): Cardinal;
     function GetOccupiedRatio: double;
+    function GetMaxPixel: integer;
   protected
     function GetPixelSize: integer;
     procedure DoOnProgress(const Done, Size: integer; var Abort: boolean); virtual;
@@ -125,6 +127,8 @@ type
     property OccupiedRatio: double read GetOccupiedRatio;
     property Data: TStream read GetData write SetData;
     property Coords: TPointArray read fCoords write SetCoords;
+    property UsedPixel: integer read fUsedPixel;
+    property MaxPixel: integer read GetMaxPixel;
   published
     property Password: string read fPassword write fPassword;
     property OnProgress: TStegProgressEvent read fOnProgress write fOnProgress;
@@ -225,6 +229,14 @@ begin
   end;
 end;
 
+function TStegImage.GetMaxPixel: integer;
+begin
+  if not fBitmap.Empty then
+    Result := fBitmap.Width * fBitmap.Height
+  else
+    Result := 0;
+end;
+
 procedure TStegImage.FillCoords;
 var
   i, j, c: integer;
@@ -284,6 +296,7 @@ begin
       fBitmap.Canvas.Pixels[p.x, p.y] := TColor(pixelcol);
       // Get next pixel
       Inc(Coord);
+      Inc(fUsedPixel);
       p := fCoords[Coord];
       // Start with byte 0
       CurByte := 0;
@@ -311,6 +324,7 @@ begin
     raise TStegException.Create(SNothingToHide);
   InitCoords;
 
+  fUsedPixel := 0;
   size := fData.Size;
   ab := false;
   fData.Position := 0;
@@ -345,6 +359,7 @@ begin
     Inc(CurByte);
     if (CurByte = ps) then begin
       Inc(Coord);
+      Inc(fUsedPixel);
       p := fCoords[Coord];
       CurByte := 0;
     end;
@@ -375,6 +390,7 @@ begin
     raise TStegException.Create(SBitmapEmpty);
   InitCoords;
 
+  fUsedPixel := 0;
   fData.Clear;
   cc := Low(fCoords);
   curbyte := 0;

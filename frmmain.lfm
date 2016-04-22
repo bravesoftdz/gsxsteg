@@ -101,6 +101,14 @@ object MainForm: TMainForm
         OnClick = btnSaveMessageClick
         TabOrder = 4
       end
+      object lblUsedToExtract: TLabel
+        Left = 192
+        Height = 15
+        Top = 304
+        Width = 50
+        Caption = 'Used: n/a'
+        ParentColor = False
+      end
     end
     object TabSheet2: TTabSheet
       Caption = 'Hide'
@@ -220,6 +228,14 @@ object MainForm: TMainForm
         Top = 152
         Width = 58
         Caption = 'Size: 0 Byte'
+        ParentColor = False
+      end
+      object lblUsedToHide: TLabel
+        Left = 136
+        Height = 15
+        Top = 304
+        Width = 50
+        Caption = 'Used: n/a'
         ParentColor = False
       end
     end

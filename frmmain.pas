@@ -19,6 +19,7 @@ type
     Image1: TImage;
     Label1: TLabel;
     Label10: TLabel;
+    lblUsedToHide: TLabel;
     lblCapacity: TLabel;
     lblFilesize: TLabel;
     lblMsgsize: TLabel;
@@ -30,6 +31,7 @@ type
     Label6: TLabel;
     Label7: TLabel;
     Label8: TLabel;
+    lblUsedToExtract: TLabel;
     lblVersion: TLabel;
     PageControl1: TPageControl;
     dlgSaveMessage: TSaveDialog;
@@ -104,6 +106,7 @@ begin
       try
         si.Embed;
         si.SaveToFile(dlgTarget.FileName);
+        lblUsedToHide.Caption := Format('Used %d of %d Pixel', [si.UsedPixel, si.MaxPixel]);
       except
         on E: Exception do
           Application.MessageBox(PChar(E.Message), 'Error', MB_OK or MB_ICONERROR);
@@ -136,6 +139,7 @@ begin
       try
         si.Extract;
         si.SaveDataToFile(dlgSaveMessage.FileName);
+        lblUsedToExtract.Caption := Format('Used %d of %d Pixel', [si.UsedPixel, si.MaxPixel]);
       except
         on E: Exception do
           Application.MessageBox(PChar(E.Message), 'Error', MB_OK or MB_ICONERROR);
@@ -181,6 +185,7 @@ begin
     try
       si.Extract;
       txtMessage.Text := si.GetDataAsString;
+      lblUsedToExtract.Caption := Format('Used %d of %d Pixel', [si.UsedPixel, si.MaxPixel]);
     except
       on E: Exception do
         Application.MessageBox(PChar(E.Message), 'Error', MB_OK or MB_ICONERROR);
