@@ -251,7 +251,7 @@ begin
       try
         FStegHisto := TStegHisto.Create;
         bmp.Assign(pic.Graphic);
-        FStegHisto.Bitmap := bmp;
+        FStegHisto.SetBitmap(bmp);
         FHistoGram.StegHisto := FStegHisto;
       finally
         bmp.Free;
