@@ -11,7 +11,7 @@ unit Histogram;
 interface
 
 uses
-  Classes, SysUtils, Controls, Graphics, LCLType, Forms, StegHisto;
+  Classes, SysUtils, Controls, Graphics, LCLType, Forms, StegHisto, LMessages;
 
 type
   THistogram = class(TCustomControl)
@@ -19,6 +19,7 @@ type
     FStegHisto: TStegHisto;
     procedure SetStegHisto(Value: TStegHisto);
   protected
+    procedure WMSize(var Message: TLMSize); message LM_SIZE;
     procedure Paint; override;
   public
     constructor Create(AOwner: TComponent); override;
@@ -45,6 +46,12 @@ begin
     FStegHisto := Value;
     Invalidate;
   end;
+end;
+
+procedure THistogram.WMSize(var Message: TLMSize);
+begin
+  inherited;
+  Invalidate;
 end;
 
 procedure THistogram.Paint;
