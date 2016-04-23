@@ -24,6 +24,8 @@ type
     Image1: TImage;
     Label1: TLabel;
     Label10: TLabel;
+    lblCompileDate: TLabel;
+    lblCompiler: TLabel;
     lblUsedToHide: TLabel;
     lblCapacity: TLabel;
     lblFilesize: TLabel;
@@ -167,6 +169,8 @@ procedure TMainForm.FormCreate(Sender: TObject);
 begin
   PageControl1.ActivePageIndex := 0;
   lblVersion.Caption := Format('Version %s', [VERSION]);
+  lblCompiler.Caption := 'Compiled with FPC ' + {$i %FPCVERSION%} + ' for ' + {$I %FPCTARGETOS%} + ' on ' + {$I %FPCTARGETCPU%};
+  lblCompileDate.Caption := {$i %DATE%} + ' ' + {$i %TIME%};
   Application.OnException := @AppException;
 
   FHistogram := THistogram.Create(pnlHisto);

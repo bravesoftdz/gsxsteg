@@ -15,10 +15,10 @@ object MainForm: TMainForm
     Height = 356
     Top = 8
     Width = 490
-    ActivePage = TabSheet4
+    ActivePage = TabSheet3
     Align = alClient
     BorderSpacing.Around = 8
-    TabIndex = 2
+    TabIndex = 3
     TabOrder = 0
     object TabSheet1: TTabSheet
       Caption = 'Extract'
@@ -343,7 +343,7 @@ object MainForm: TMainForm
       object Label8: TLabel
         Left = 132
         Height = 45
-        Top = 16
+        Top = 8
         Width = 115
         Caption = 'gsxsteg'
         Font.Height = -32
@@ -354,7 +354,7 @@ object MainForm: TMainForm
       object lblVersion: TLabel
         Left = 132
         Height = 15
-        Top = 68
+        Top = 56
         Width = 66
         Caption = 'Version 1.0.3'
         ParentColor = False
@@ -379,6 +379,22 @@ object MainForm: TMainForm
         ParentColor = False
         ParentFont = False
         OnClick = lblLinkClick
+      end
+      object lblCompiler: TLabel
+        Left = 132
+        Height = 15
+        Top = 80
+        Width = 62
+        Caption = 'lblCompiler'
+        ParentColor = False
+      end
+      object lblCompileDate: TLabel
+        Left = 132
+        Height = 15
+        Top = 97
+        Width = 82
+        Caption = 'lblCompileDate'
+        ParentColor = False
       end
     end
   end
