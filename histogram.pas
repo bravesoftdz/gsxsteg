@@ -106,15 +106,15 @@ begin
   end;
   Canvas.Font.Color := clRed;
   y := 10;
-  s := Format('Mean %.2f', [FStegHisto.MeanRed]);
+  s := Format('Mean %.2f, StdDev %.2f', [FStegHisto.MeanRed, FStegHisto.StdDevRed]);
   x := cw - (Canvas.TextWidth(s) + 10);
   Canvas.TextOut(x, y, s);
   Inc(y, Canvas.TextHeight('^_g') + 2);
   Canvas.Font.Color := clGreen;
-  Canvas.TextOut(x, y, Format('Mean %.2f', [FStegHisto.MeanGreen]));
+  Canvas.TextOut(x, y, Format('Mean %.2f, StdDev %.2f', [FStegHisto.MeanGreen, FStegHisto.StdDevGreen]));
   Inc(y, Canvas.TextHeight('^_g') + 2);
   Canvas.Font.Color := clBlue;
-  Canvas.TextOut(x, y, Format('Mean %.2f', [FStegHisto.MeanBlue]));
+  Canvas.TextOut(x, y, Format('Mean %.2f, StdDev %.2f', [FStegHisto.MeanBlue, FStegHisto.StdDevBlue]));
 end;
 
 end.

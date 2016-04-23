@@ -31,6 +31,7 @@ type
     FBlue: array[0..255] of Integer;
     FMaxRed, FMaxGreen, FMaxBlue: integer;
     FMeanRed, FMeanGreen, FMeanBlue: double;
+    FStdDevRed, FStdDevGreen, FStdDevBlue: double;
 
     FBitmap: TBitmap;
     procedure Process;
@@ -51,6 +52,9 @@ type
     property MeanRed: double read FMeanRed;
     property MeanGreen: double read FMeanGreen;
     property MeanBlue: double read FMeanBlue;
+    property StdDevRed: double read FStdDevRed;
+    property StdDevGreen: double read FStdDevGreen;
+    property StdDevBlue: double read FStdDevBlue;
   end;
 
 implementation
@@ -103,6 +107,7 @@ end;
 procedure TStegHisto.Process;
 var
   x, y, i: integer;
+  bh, bw: integer;
   PixelCol: TRGBTriple;
   sr, sg, sb: integer;
 begin
@@ -120,10 +125,15 @@ begin
   FMeanRed := 0.0;
   FMeanGreen := 0.0;
   FMeanBlue := 0.0;
+  FStdDevRed := 0.0;
+  FStdDevGreen := 0.0;
+  FStdDevBlue := 0.0;
 
   sr := 0; sg := 0; sb := 0;
-  for x := 0 to FBitmap.Width - 1 do begin
-    for y := 0 to FBitmap.Height - 1 do begin
+  bw := FBitmap.Width;
+  bh := FBitmap.Height;
+  for x := 0 to bw - 1 do begin
+    for y := 0 to bh - 1 do begin
       PixelCol := ColorToRGB(fBitmap.Canvas.Pixels[x, y]);
       Inc(FRed[PixelCol.rgbtRed]);
       Inc(sr, PixelCol.rgbtRed);
@@ -133,15 +143,21 @@ begin
       Inc(sb, PixelCol.rgbtBlue);
     end;
   end;
-  FMeanRed := sr / (FBitmap.Width * FBitmap.Height);
-  FMeanGreen := sg / (FBitmap.Width * FBitmap.Height);
-  FMeanBlue := sb / (FBitmap.Width * FBitmap.Height);
+  FMeanRed := sr / (bw * bh);
+  FMeanGreen := sg / (bw * bh);
+  FMeanBlue := sb / (bw * bh);
 
   for i := 0 to 255 do begin
     FMaxRed := Max(FMaxRed, FRed[i]);
     FMaxGreen := Max(FMaxGreen, FGreen[i]);
     FMaxBlue := Max(FMaxBlue, FBlue[i]);
+    FStdDevRed := FRed[i] - FMeanRed;
+    FStdDevGreen := FGreen[i] - FMeanGreen;
+    FStdDevBlue := FBlue[i] - FMeanBlue;
   end;
+  FStdDevRed := Sqrt(Abs(FStdDevRed));
+  FStdDevGreen := Sqrt(Abs(FStdDevGreen));
+  FStdDevBlue := Sqrt(Abs(FStdDevBlue));
 end;
 
 end.
