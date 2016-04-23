@@ -5,5 +5,13 @@
 *.zip
 *.otares
 *.compiled
+*.o
+*.ppu
+*.rsj
+*.dbg
+*.or
+*.lps
 __history
+lib
+test
 ConverterBackup
