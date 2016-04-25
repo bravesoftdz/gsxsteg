@@ -12,7 +12,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ComCtrls,
-  ExtCtrls, EditBtn, StdCtrls, LCLType, LCLIntf, Histogram, StegHisto;
+  ExtCtrls, EditBtn, StdCtrls, LCLType, LCLIntf, Histogram, StegHisto, meter;
 
 type
   { TMainForm }
@@ -26,7 +26,6 @@ type
     Label10: TLabel;
     lblCompileDate: TLabel;
     lblCompiler: TLabel;
-    lblUsedToHide: TLabel;
     lblCapacity: TLabel;
     lblFilesize: TLabel;
     lblMsgsize: TLabel;
@@ -38,10 +37,11 @@ type
     Label6: TLabel;
     Label7: TLabel;
     Label8: TLabel;
-    lblUsedToExtract: TLabel;
     lblVersion: TLabel;
     PageControl1: TPageControl;
     dlgSaveMessage: TSaveDialog;
+    pnlHideMeter: TPanel;
+    pnlExtrMeter: TPanel;
     pnlHisto: TPanel;
     pnlHistoFile: TPanel;
     TabSheet1: TTabSheet;
@@ -70,6 +70,8 @@ type
     { private declarations }
     FStegHisto: TStegHisto;
     FHistogram: THistogram;
+    FHideMeter: TMeter;
+    FExtrMeter: TMeter;
     procedure AppException(Sender: TObject; E: Exception);
   public
     { public declarations }
@@ -121,7 +123,8 @@ begin
       try
         si.Embed;
         si.SaveToFile(dlgTarget.FileName);
-        lblUsedToHide.Caption := Format('Used %d of %d Pixel', [si.UsedPixel, si.MaxPixel]);
+        FHideMeter.Value := Round((si.UsedPixel / si.MaxPixel) * 100);
+        FHideMeter.Caption := Format('Used %d of %d Pixel', [si.UsedPixel, si.MaxPixel]);
       except
         on E: Exception do
           Application.MessageBox(PChar(E.Message), 'Error', MB_OK or MB_ICONERROR);
@@ -154,7 +157,8 @@ begin
       try
         si.Extract;
         si.SaveDataToFile(dlgSaveMessage.FileName);
-        lblUsedToExtract.Caption := Format('Used %d of %d Pixel', [si.UsedPixel, si.MaxPixel]);
+        FExtrMeter.Value := Round((si.UsedPixel / si.MaxPixel) * 100);
+        FExtrMeter.Caption := Format('Used %d of %d Pixel', [si.UsedPixel, si.MaxPixel]);
       except
         on E: Exception do
           Application.MessageBox(PChar(E.Message), 'Error', MB_OK or MB_ICONERROR);
@@ -176,6 +180,14 @@ begin
   FHistogram := THistogram.Create(pnlHisto);
   FHistogram.Parent := pnlHisto;
   FHistogram.Align := alClient;
+  FHideMeter := TMeter.Create(pnlHideMeter);
+  FHideMeter.Parent := pnlHideMeter;
+  FHideMeter.Align := alClient;
+  FHideMeter.Caption := 'Used: n/a';
+  FExtrMeter := TMeter.Create(pnlExtrMeter);
+  FExtrMeter.Parent := pnlExtrMeter;
+  FExtrMeter.Align := alClient;
+  FExtrMeter.Caption := 'Used: n/a';
 end;
 
 procedure TMainForm.FormDestroy(Sender: TObject);
@@ -213,7 +225,8 @@ begin
     try
       si.Extract;
       txtMessage.Text := si.GetDataAsString;
-      lblUsedToExtract.Caption := Format('Used %d of %d Pixel', [si.UsedPixel, si.MaxPixel]);
+      FExtrMeter.Value := Round((si.UsedPixel / si.MaxPixel) * 100);
+      FExtrMeter.Caption := Format('Used %d of %d Pixel', [si.UsedPixel, si.MaxPixel]);
     except
       on E: Exception do
         Application.MessageBox(PChar(E.Message), 'Error', MB_OK or MB_ICONERROR);

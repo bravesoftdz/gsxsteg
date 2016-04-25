@@ -8,7 +8,7 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, frmmain, StegHisto, histogram
+  Forms, frmmain, StegHisto, histogram, meter
   { you can add units after this };
 
 {$R *.res}
