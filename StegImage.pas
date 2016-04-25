@@ -302,7 +302,7 @@ begin
       CurByte := 0;
     end;
   end;
-  if (CurByte <> ps) then begin
+  if (CurByte <> ps) and (CurByte <> 0) then begin
     // Store remaining
     fBitmap.Canvas.Pixels[p.x, p.y] := TColor(pixelcol);
   end;
