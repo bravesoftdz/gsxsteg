@@ -23,13 +23,14 @@
     </VersionInfo>
     <BuildModes Count="2">
       <Item1 Name="Debug" Default="True"/>
-      <Item2 Name="Release">
+      <Item2 Name="Win64-Release">
         <CompilerOptions>
           <Version Value="11"/>
           <PathDelim Value="\"/>
           <SearchPaths>
             <IncludeFiles Value="hashes;$(ProjOutDir)"/>
             <OtherUnitFiles Value="hashes;pngimage"/>
+            <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
           </SearchPaths>
           <Parsing>
             <SyntaxOptions>
@@ -38,6 +39,8 @@
           </Parsing>
           <CodeGeneration>
             <SmartLinkUnit Value="True"/>
+            <TargetCPU Value="x86_64"/>
+            <TargetOS Value="win64"/>
             <Optimizations>
               <OptimizationLevel Value="3"/>
             </Optimizations>
@@ -94,6 +97,7 @@
     <SearchPaths>
       <IncludeFiles Value="hashes;$(ProjOutDir)"/>
       <OtherUnitFiles Value="hashes;pngimage"/>
+      <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Parsing>
       <SyntaxOptions>
